@@ -1,7 +1,8 @@
 # API REST — Cursos y Estudiantes
 
 Parcial Programación III · Spring Boot 3 + JPA + PostgreSQL
-
+Kevin Danilo Cordoba Salinas
+Brandon Eduardo Muñoz
 ## Relación
 
 ```
