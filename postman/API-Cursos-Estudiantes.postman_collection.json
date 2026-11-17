@@ -1,0 +1,828 @@
+{
+  "info": {
+    "name": "API Cursos y Estudiantes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Cursos - CRUD",
+      "item": [
+        {
+          "name": "Crear curso PROG3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": \"PROG3\",\n  \"nombre\": \"Programación III\",\n  \"descripcion\": \"APIs REST con Spring Boot\",\n  \"creditos\": 4,\n  \"cupoMaximo\": 3\n}"
+            }
+          }
+        },
+        {
+          "name": "Crear curso BD1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": \"BD1\",\n  \"nombre\": \"Bases de Datos\",\n  \"descripcion\": \"Modelado y SQL\",\n  \"creditos\": 3,\n  \"cupoMaximo\": 30\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar cursos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener curso por id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Actualizar curso",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": \"PROG3\",\n  \"nombre\": \"Programación III\",\n  \"descripcion\": \"APIs REST con Spring Boot\",\n  \"creditos\": 4,\n  \"cupoMaximo\": 5\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar curso",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "2"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Estudiantes - CRUD",
+      "item": [
+        {
+          "name": "Crear estudiante (datos desordenados)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documento\": \"1001\",\n  \"nombres\": \"  jUAN  carlos\",\n  \"apellidos\": \"perez gomez\",\n  \"email\": \"Juan@UNIAJC.edu.co\",\n  \"semestre\": 7,\n  \"codigoCurso\": \"prog3\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Crear estudiante 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documento\": \"1002\",\n  \"nombres\": \"Ana María\",\n  \"apellidos\": \"Ruiz\",\n  \"email\": \"ana@gmail.com\",\n  \"semestre\": 3,\n  \"codigoCurso\": \"PROG3\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Crear estudiante 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documento\": \"1003\",\n  \"nombres\": \"Luis\",\n  \"apellidos\": \"Torres\",\n  \"email\": \"luis@uniajc.edu.co\",\n  \"semestre\": 9,\n  \"codigoCurso\": \"BD1\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Listar estudiantes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener estudiante por id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Actualizar / cambiar de curso",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documento\": \"1001\",\n  \"nombres\": \"  jUAN  carlos\",\n  \"apellidos\": \"perez gomez\",\n  \"email\": \"Juan@UNIAJC.edu.co\",\n  \"semestre\": 8,\n  \"codigoCurso\": \"BD1\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar estudiante",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "2"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Validaciones (deben fallar)",
+      "item": [
+        {
+          "name": "Curso duplicado por nombre (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": \"OTRO\",\n  \"nombre\": \"PROGRAMACION   iii\",\n  \"descripcion\": \"APIs REST con Spring Boot\",\n  \"creditos\": 4,\n  \"cupoMaximo\": 3\n}"
+            }
+          }
+        },
+        {
+          "name": "Curso duplicado por codigo (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": \"prog3\",\n  \"nombre\": \"Otro nombre\",\n  \"descripcion\": \"APIs REST con Spring Boot\",\n  \"creditos\": 4,\n  \"cupoMaximo\": 3\n}"
+            }
+          }
+        },
+        {
+          "name": "Curso datos invalidos (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigo\": \"\",\n  \"nombre\": \"\",\n  \"creditos\": 0,\n  \"cupoMaximo\": 0\n}"
+            }
+          }
+        },
+        {
+          "name": "Estudiante con curso inexistente (404)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documento\": \"2001\",\n  \"nombres\": \"Ana María\",\n  \"apellidos\": \"Ruiz\",\n  \"email\": \"x@x.com\",\n  \"semestre\": 3,\n  \"codigoCurso\": \"NOEXISTE\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Estudiante email duplicado (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documento\": \"2002\",\n  \"nombres\": \"Ana María\",\n  \"apellidos\": \"Ruiz\",\n  \"email\": \"ANA@gmail.com\",\n  \"semestre\": 3,\n  \"codigoCurso\": \"PROG3\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Eliminar curso con estudiantes (409)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Consultas personalizadas",
+      "item": [
+        {
+          "name": "Curso por codigo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/codigo/prog3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "codigo",
+                "prog3"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar curso por nombre (sin tildes)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/buscar?nombre=programacion",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "nombre",
+                  "value": "programacion"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cursos por rango de creditos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/creditos?min=3&max=4",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "creditos"
+              ],
+              "query": [
+                {
+                  "key": "min",
+                  "value": "3"
+                },
+                {
+                  "key": "max",
+                  "value": "4"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cursos con cupo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/con-cupo",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "con-cupo"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cursos con minimo N estudiantes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/minimo-estudiantes/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "minimo-estudiantes",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Resumen inscritos por curso",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cursos/resumen",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cursos",
+                "resumen"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Estudiantes de un curso",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/curso/PROG3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "curso",
+                "PROG3"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Estudiantes de curso desde semestre",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/curso/PROG3/semestre-minimo/5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "curso",
+                "PROG3",
+                "semestre-minimo",
+                "5"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Estudiantes por rango de semestre",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/semestres?desde=1&hasta=7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "semestres"
+              ],
+              "query": [
+                {
+                  "key": "desde",
+                  "value": "1"
+                },
+                {
+                  "key": "hasta",
+                  "value": "7"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar estudiante por nombre",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/buscar?texto=juan",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "buscar"
+              ],
+              "query": [
+                {
+                  "key": "texto",
+                  "value": "juan"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Estudiantes en cursos con creditos minimos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/creditos-minimos/4",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "creditos-minimos",
+                "4"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Estudiantes por dominio de correo (nativa)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/estudiantes/dominio?dominio=uniajc.edu.co",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "estudiantes",
+                "dominio"
+              ],
+              "query": [
+                {
+                  "key": "dominio",
+                  "value": "uniajc.edu.co"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
